@@ -2,6 +2,9 @@
 集群聊天服务器和客户端源码，技术栈c++、muduo网络库、MySQL、nginx、Redis等
 
 编译方式
+方式一：
+./autobuild.sh
+方式二：
 cd build
 rm -rf *
 cmake ..
