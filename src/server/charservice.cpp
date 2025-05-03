@@ -74,7 +74,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         {
             // 用户已经在线，不允许重复登录
             json response;
-            response["msgid"] = REG_MSG_ACK;
+            response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 2;
             response["errmsg"] = "this account is using, inut another";
             conn->send(response.dump());
@@ -95,7 +95,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             _userModel.updateState(user);
 
             json response;
-            response["msgid"] = REG_MSG_ACK;
+            response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 0;
             response["id"] = user.getId();
             response["name"] = user.getName();
